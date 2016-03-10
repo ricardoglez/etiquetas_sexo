@@ -92,15 +92,14 @@ boolean startDet() {
   boca = bocaCV.detect();
   if (caras.length !=0) { //Si detecta una caraCV ..
     hayAlguien = true;
-    
-      for (int i = 0; i < caras.length; i++) { // Dibuja caraCVsi son minimo de 50px ...
-      for (int item = 0; item <= 50; item++) {
-        if (caras[i].width >= 50) {
+    for (int i = 0; i < caras.length; i++) { // Dibuja caraCV si son minimo de 50px ...
+      if (caras[i].width >= 50) {
+        for (int item = 0; item <= 50-1; item++) {
           xCara_ = caras[i].x; // ubicacion de cara x
           yCara_ = caras[i].y; // ubicacion de cara y
           wCara_ = caras[i].width; // ancho de cara
           hCara_ = caras[i].height;// alto de cara 
-          println("#",item);
+          println("#", item);
           caraDatos[0][item] = xCara_;
           caraDatos[1][item] = yCara_;
           caraDatos[2][item] = wCara_;
